@@ -60,8 +60,8 @@ ARG OLLAMA_CUSTOM_CPU_DEFS
 ARG CGO_CFLAGS
 WORKDIR /go/src/github.com/jmorganca/ollama/llm/generate
 
-FROM --platform=linux/amd64 cpu-builder-amd64 AS cpu-build-amd64
-RUN OLLAMA_CPU_TARGET="cpu" sh gen_linux.sh
+#FROM --platform=linux/amd64 cpu-builder-amd64 AS cpu-build-amd64
+#RUN OLLAMA_CPU_TARGET="cpu" sh gen_linux.sh
 FROM --platform=linux/amd64 cpu-builder-amd64 AS cpu_avx-build-amd64
 RUN OLLAMA_CPU_TARGET="cpu_avx" sh gen_linux.sh
 # FROM --platform=linux/amd64 cpu-builder-amd64 AS cpu_avx2-build-amd64
