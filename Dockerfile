@@ -5,8 +5,8 @@ ARG ROCM_VERSION=6.0
 
 # Copy the minimal context we need to run the generate scripts
 FROM scratch AS llm-code
-COPY .git .git
-COPY .gitmodules .gitmodules
+#COPY .git .git
+#COPY .gitmodules .gitmodules
 COPY llm llm
 
 FROM --platform=linux/amd64 nvidia/cuda:$CUDA_VERSION-devel-centos7 AS cuda-build-amd64
