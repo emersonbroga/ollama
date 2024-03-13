@@ -64,8 +64,8 @@ FROM --platform=linux/amd64 cpu-builder-amd64 AS cpu-build-amd64
 RUN OLLAMA_CPU_TARGET="cpu" sh gen_linux.sh
 FROM --platform=linux/amd64 cpu-builder-amd64 AS cpu_avx-build-amd64
 RUN OLLAMA_CPU_TARGET="cpu_avx" sh gen_linux.sh
-FROM --platform=linux/amd64 cpu-builder-amd64 AS cpu_avx2-build-amd64
-RUN OLLAMA_CPU_TARGET="cpu_avx2" sh gen_linux.sh
+# FROM --platform=linux/amd64 cpu-builder-amd64 AS cpu_avx2-build-amd64
+# RUN OLLAMA_CPU_TARGET="cpu_avx2" sh gen_linux.sh
 
 FROM --platform=linux/arm64 centos:7 AS cpu-build-arm64
 ARG CMAKE_VERSION
